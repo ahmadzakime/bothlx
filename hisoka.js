@@ -897,13 +897,14 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
             }
 			break
 			
+	case 'hd' :
         case 'remini': {
-if (!quoted) return reply(`Fotonya Mana?`)
-if (!/image/.test(mime)) return reply(`Send/Reply Foto Dengan Caption ${prefix + command}`)
+if (!quoted) return m.reply(`Fotonya Mana?`)
+if (!/image/.test(mime)) return m.reply(`Send/Reply Foto Dengan Caption ${prefix + command}`)
 reply(mess.wait)
 let media = await quoted.download()
 let proses = await remini(media, "enhance");
-hisoka.sendMessage(m.chat, { image: proses, caption: '_Maaf Kak, Kalau Hasilnya Nggak Bagus_ T_T'}, { quoted: m})
+hisoka.sendMessage(m.chat, { image: proses, caption: ''}, { quoted: m})
 }
 break
                case 'totag': {
