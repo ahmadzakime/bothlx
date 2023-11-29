@@ -895,7 +895,17 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
             if (!isAdmins) throw mess.admin
             hisoka.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
             }
-            break
+			break
+			
+        case 'remini': {
+if (!quoted) return reply(`Fotonya Mana?`)
+if (!/image/.test(mime)) return reply(`Send/Reply Foto Dengan Caption ${prefix + command}`)
+reply(mess.wait)
+let media = await quoted.download()
+let proses = await remini(media, "enhance");
+hisoka.sendMessage(m.chat, { image: proses, caption: '_Maaf Kak, Kalau Hasilnya Nggak Bagus_ T_T'}, { quoted: m})
+}
+break
                case 'totag': {
                if (!m.isGroup) throw mess.group
                if (!isBotAdmins) throw mess.botAdmin
