@@ -901,7 +901,7 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
         case 'remini': {
 if (!quoted) return m.reply(`Fotonya Mana?`)
 if (!/image/.test(mime)) return m.reply(`Send/Reply Foto Dengan Caption ${prefix + command}`)
-reply(mess.wait)
+m.reply(mess.wait)
 let media = await quoted.download()
 let proses = await remini(media, "enhance");
 hisoka.sendMessage(m.chat, { image: proses, caption: ''}, { quoted: m})
