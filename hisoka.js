@@ -1909,7 +1909,7 @@ let sorry = 'Maafkan saya, saya akan mencoba lebih baik kedepannya 😊'
                 bch.snapsave(`${text}`)
                 .then(async(result) => {
                 for(let i of result)
-                hisoka.sendMessage(m.chat, { video: { url: i.url }, caption: `Download m.chat ${text}` }, { quoted: m})
+                hisoka.sendMessage(m.chat, { video: { url: i.url }, { quoted: m})
             })
 	            }
             break
